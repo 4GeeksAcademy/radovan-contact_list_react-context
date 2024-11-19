@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
+import { Card } from "../component/contactCard";
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
@@ -13,6 +14,7 @@ export const Demo = () => {
 			<ul className="list-group">
 				{store.demo.map((item, index) => {
 					return (
+						
 						<li
 							key={index}
 							className="list-group-item d-flex justify-content-between"
@@ -33,6 +35,7 @@ export const Demo = () => {
 						</li>
 					);
 				})}
+				
 			</ul>
 			<br />
 			<Link to="/">
