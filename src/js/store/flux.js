@@ -83,13 +83,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			editContact: (contact) => {
-				fetch(apiUrl + "/agendas/" + contactiD, {method:"PUT", body: JSON.stringify(contact)} )
+				fetch(apiUrl + "/agendas/radovan/contacts/" + contact.id, {method:"PUT", headers: {"Content-Type": "application/json"} , body: JSON.stringify({
+					name:contact.name,
+					phone:contact.phone,
+					address:contact.address,
+					email:contact.email
+				})} )
 					.then(response => response.json() )
 					.then(data => console.log(data) )
 					.catch(error => console.log(error) )
 			},
+
+			deleteContact: (id) => {
+				console.log(id)
+				fetch(apiUrl + "/agendas/radovan/contacts/" + id, {method: "DELETE", headers: {"Content-Type": "application/json"} } ) 
+				// .then(response => response.json())
+				// .then(data => console.log(data))
+				// .catch(error => console.log(error))
+			},
+			
 		}
 	};
 };
 
 export default getState;
+
+
+

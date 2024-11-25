@@ -9,7 +9,7 @@ export const Home = () => {
 		
 	<div>
 		<Link to="/add">
-		<div className=" col-6 fw-bold px-5"> ADD NEW CONTACT</div>
+		<div className=" col-2 fw-bold px-5 m-auto"> ADD NEW CONTACT</div>
 		</Link>
 		<div>{store.contacts && store.contacts.length > 0 && store.contacts.map}</div>
 		</div>

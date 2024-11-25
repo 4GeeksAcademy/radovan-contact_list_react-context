@@ -7,12 +7,13 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1"> {store.contacts && store.contacts.length > 0 && store.contacts[0].name} </span>
+				{/* <span className="navbar-brand mb-0 h1"> {store.contacts && store.contacts.length > 0 && store.contacts[0].name} </span> */}
 			</Link>
-			<div className="ml-auto">
-				<Link to="/add">
+			<div className="m-auto fw-bold display-6">
+				CONTACT LIST
+				{/* <Link to="/add">
 					<button className="btn btn-primary">ADD NEW CONTACT</button>
-				</Link>
+				</Link> */}
 			</div>
 		</nav>
 	);

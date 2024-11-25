@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { redirect } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
     
-export const Form = () => {
+export const EditContact = () => {
   const{actions, store} = useContext(Context)
+  const {id} = useParams()
   const submit = (e) => {
     // evita que se refresque
     e.preventDefault()
@@ -12,15 +13,15 @@ export const Form = () => {
     const email = e.target.exampleInputEmail1.value
     const phone = e.target.exampleInputPhone1.value
     const address = e.target.exampleInputAdress1.value
-      actions.createContact({name: name, email: email, phone: phone, address: address})
+      actions.editContact({name: name, email: email, phone: phone, address: address, id: id})
       redirect("/demo")
   }
     return (
-     
+      
+       
       <form onSubmit = {submit}>
-         
-        <div className="vh-50 d-flex justify-content-center align-items-center flex-column m-auto">
-
+         <div className="vh-10 d-flex justify-content-center align-items-center flex-column m-auto">
+          <div>EditContact</div>
           <div className="col-4 mb-3">
             <label htmlFor="exampleInputFullName1" className="form-label">Full Name</label>
             <input type="text" className="form-control" id="exampleInputFullName1" aria-describedby="emailHelp"/>
@@ -39,16 +40,18 @@ export const Form = () => {
           <div className="col-4 mb-3">
             <label htmlFor="exampleInputAdress1" className="form-label">Adress</label>
             <input type="text" className="form-control" id="exampleInputAdress1"/>
-            <button type="submit" className="col-12 btn btn-primary">SAVE</button>
-        </div>
-        <Link to="/demo">
-        Get back to contacts
-        </Link>
+           
           </div>
       
          
-     
+          <button type="submit" className="col-4 btn btn-primary">SAVE</button>
+       
+        <Link to="/demo">
+        Get back to contacts
+        </Link>
+        </div>
         </form>
-
+        
       )}
+
       
