@@ -27,7 +27,7 @@ export const Card = (props) => {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-10">
-      <div className="card mb-3" style={{ maxWidth: '700px', width: '100%' }}>
+      <div className="card mb-3" style={{ maxWidth: '500px', width: '100%' }}>
         <div className="row g-0" style={{ height: '100%' }}>
           <div className="col-md-4" style={{ height: '100%' }}>
             <img

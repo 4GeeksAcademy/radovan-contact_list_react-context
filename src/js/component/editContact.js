@@ -21,7 +21,7 @@ export const EditContact = () => {
        
       <form onSubmit = {submit}>
          <div className="vh-10 d-flex justify-content-center align-items-center flex-column m-auto">
-          <div>EditContact</div>
+          <div className="fw-bold fs-3 mb-2">Edit Contact</div>
           <div className="col-4 mb-3">
             <label htmlFor="exampleInputFullName1" className="form-label">Full Name</label>
             <input type="text" className="form-control" id="exampleInputFullName1" aria-describedby="emailHelp"/>

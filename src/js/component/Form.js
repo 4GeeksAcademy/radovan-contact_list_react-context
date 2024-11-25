@@ -18,8 +18,9 @@ export const Form = () => {
     return (
      
       <form onSubmit = {submit}>
-         
+
         <div className="vh-50 d-flex justify-content-center align-items-center flex-column m-auto">
+         <div className="fw-bold fs-3 mb-3">Add contacts</div>
 
           <div className="col-4 mb-3">
             <label htmlFor="exampleInputFullName1" className="form-label">Full Name</label>

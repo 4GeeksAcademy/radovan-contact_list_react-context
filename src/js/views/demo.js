@@ -30,7 +30,7 @@ export const Demo = () => {
 					
 					</ul>
 					<br />
-					<Link to="/add">
+					<Link className=" d-flex justify-content-center align-items-center" to="/add">
 				<button className="btn btn-primary">ADD NEW CONTACT</button>
 			</Link>
 		</div>
