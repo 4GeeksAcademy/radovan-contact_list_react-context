@@ -95,9 +95,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			deleteContact: (id) => {
+				const actions= getActions()
 				console.log(id)
 				fetch(apiUrl + "/agendas/radovan/contacts/" + id, {method: "DELETE", headers: {"Content-Type": "application/json"} } ) 
-				// .then(response => response.json())
+				 .then(response =>{
+					if (!response.ok) {console.log("error al borrar")}
+					console.log("contacto eliminado")
+					return actions.getContacts()
+				 })
 				// .then(data => console.log(data))
 				// .catch(error => console.log(error))
 			},

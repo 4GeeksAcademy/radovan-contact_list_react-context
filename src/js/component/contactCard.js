@@ -9,10 +9,14 @@ export const Card = (props) => {
   const [showModal, setShowModal] = useState(false);
   
   // FUNCIÓN PARA BORRAR CONTACTO
-  const clear = () => {
-    actions.deleteContact(props.id);
-    actions.getContacts();
-    setShowModal(false);  // Hide the modal after deleting
+  const clear = async () => {
+    try{
+
+      await actions.deleteContact(props.id);
+      setShowModal(false);  // Hide the modal after deleting
+      // await actions.getContacts();
+      console.log("se borró")
+    } catch(error){console.log(error)}
   };
 
   // FUNCIONES PARA CERRAR O ACTIVAR EL MODAL
