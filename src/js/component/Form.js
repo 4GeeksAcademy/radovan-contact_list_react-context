@@ -42,7 +42,7 @@ export const Form = () => {
             <input type="text" className="form-control" id="exampleInputAdress1"/>
             <button type="submit" className="col-12 btn btn-primary">SAVE</button>
         </div>
-        <Link to="/demo">
+        <Link to="/">
         Get back to contacts
         </Link>
           </div>

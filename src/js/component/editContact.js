@@ -46,7 +46,7 @@ export const EditContact = () => {
          
           <button type="submit" className="col-4 btn btn-primary">SAVE</button>
        
-        <Link to="/demo">
+        <Link to="/">
         Get back to contacts
         </Link>
         </div>

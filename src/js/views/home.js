@@ -1,20 +1,36 @@
-import React, { useContext } from "react";
-import { Form } from "../component/Form";
-import { Context } from "../store/appContext";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { Card } from "../component/contactCard";
 
 export const Home = () => {
-	const{actions, store} = useContext(Context)
-	return(
-		
-	<div>
-		<Link to="/add">
-		<div className=" col-2 fw-bold px-5 m-auto"> ADD NEW CONTACT</div>
-		</Link>
-		<div>{store.contacts && store.contacts.length > 0 && store.contacts.map}</div>
+	const { store, actions } = useContext(Context);
+	// fetch de los contactos cuando se montan los componentes
+	useEffect(() => {
+		actions.getContacts()
+	  }, [] )
+	  console.log(store.contacts)
+	return (
+		<div className="container">
+			<ul className="list-group" style={{ listStyleType: 'none', paddingLeft: 0 }}>
+				{store.contacts?.map((item, index) => {
+					return (
+						<li key={index}>
+							<Card name={item.name}
+							address={item.address}
+							email={item.email}
+							phone={item.phone}
+							id={item.id}
+							/>
+							</li>
+						);
+					})}
+					
+					</ul>
+					<br />
+					<Link className=" d-flex justify-content-center align-items-center" to="/add">
+				<button className="btn btn-primary">ADD NEW CONTACT</button>
+			</Link>
 		</div>
-	
-	
-);};
-
-
+	);
+};
